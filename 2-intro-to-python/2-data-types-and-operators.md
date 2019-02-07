@@ -166,7 +166,7 @@ Logical Operators:
   // Write code that prints True if San Francisco is denser than Rio, and False otherwise
   print(san_francisco_pop_density > rio_de_janeiro_pop_density)
 
-12 - Solution: Booleans, Comparison Operators and Logical Operators
+# 12 - Solution: Booleans, Comparison Operators and Logical Operators
 could be
 ```
 print(san_francisco_pop_density > rio_de_janeiro_pop_density)
@@ -178,3 +178,169 @@ if (san_francisco_pop_density > rio_de_janeiro_pop_density):
 else:
     print (False)
 ```
+
+# 13 - Strings
+Immutable ordered series of characters
+Can be created with single or double quotes
+  - There are a few edge cases
+What if you want quotation marks in your string?
+  - Place string in single quotes rather than double quotes (so you can use the other one in the string)
+  - Use backslash to escape the quotes that should be part of the string and not an ending quote
+String operators:
+  + put strings together
+  * repeat strings
+Use `len()` to determine how many characters are in the string  
+
+# 14 - Quiz: Strings
+```
+given_name = "William"
+middle_names = "Bradley"
+family_name = "Pitt"
+
+name_length = len(given_name + " " + middle_names + " " + family_name) #todo: calculate how long this name is
+
+# Now we check to make sure that the name fits within the driving license character limit
+# Nothing you need to do here
+driving_license_character_limit = 28
+print(name_length <= driving_license_character_limit)
+```
+
+Using len() on an integer will return this error `TypeError: object of type 'int' has no len()`
+
+# 15 - Solution: Strings
+Another alternative:
+```
+# TODO: Fix this string!
+ford_quote = "Whether you think you can, or you think you can't--you're right."
+```
+
+```
+name_length = len(given_name) + len(middle_names) + len(family_name) + 2
+```
+
+```
+len("{0} {1} {2}".format(given_name, middle_names, family_name))
+```
+
+# 16 - Type and Type Conversion
+Four data types we've seen so far:
+  - int
+  - float
+  - bool
+  - string
+Check types using `type()`
+  - e.g. type('this')
+
+# 17 - Quiz: Type and Type Conversion
+```
+mon_sales = "121"
+tues_sales = "105"
+wed_sales = "110"
+thurs_sales = "98"
+fri_sales = "95"
+
+#TODO: Print a string with this format: This week's total sales: xxx
+# You will probably need to write some lines of code before the print statement.
+
+sales_total = int(mon_sales) + int(tues_sales) + int(wed_sales) + int(thurs_sales) + int(fri_sales)
+
+print("This week's total sales: " + str(sales_total))
+```
+
+# 18 - Solution: Type and Type Conversion
+
+Nothing too radical here. Just what you had above really.
+
+# 19 - String Methods
+Methods are functions that belong to an object (in this case a string)
+  - `lower()` => `sample_string.lower()`
+
+`format()` allows you to format your strings
+  `print("Mohammed has {} balloons".format(27))` => `Mohammed has 27 balloons`
+
+```
+  animal = "dog"
+  action = "bite"
+  print("Does your {} {}?".format(animal, action)) => Does your dog bite?
+```
+
+  - `"{0} {1} {2}".format(given_name, middle_names, family_name)`
+
+# 20 - Quiz: String Methods
+```
+# Write two lines of code below, each assigning a value to a variable
+person = "I"
+action = "move it move it"
+
+# Now write a print statement using .format() to print out a sentence and the 
+#   values of both of the variables
+print("{0} like to {1}!".format(person, action))
+```
+
+# 21 - Another String Method - Split
+`split()` returns a list that contains the words from the input string
+
+Has two additional arguments
+  - `sep`: stands for "separator" and can identify how the string should be split up (e.g. whitespace, comma, etc) => defaults to whitespace
+  - `maxsplit`: provides the maximum number of splits - resulting in maxsplit + 1 number of arguments in the new list (remaining string is last item returned)
+
+# 22 - Quiz: String Methods Practice
+```
+verse = "If you can keep your head when all about you\n  Are losing theirs and blaming it on you,\nIf you can trust yourself when all men doubt you,\n  But make allowance for their doubting too;\nIf you can wait and not be tired by waiting,\n  Or being lied about, don’t deal in lies,\nOr being hated, don’t give way to hating,\n  And yet don’t look too good, nor talk too wise:"
+print(verse)
+
+# Use the appropriate functions and methods to answer the questions above
+# Bonus: practice using .format() to output your answers in descriptive messages!
+
+print("length: " + str(len(verse)))
+print("first and index: " + str(verse.find("and")))
+print("last you index: " + str(verse.rfind("you")))
+print("count of you: " + str(verse.count("you")))
+```
+
+# 23 - Solution: String Methods Practice
+Could get fancy with things:
+```
+message = "Verse has a length of {} characters.\nThe first occurence of the \
+word 'and' occurs at the {}th index.\nThe last occurence of the word 'you' \
+occurs at the {}th index.\nThe word 'you' occurs {} times in the verse."
+
+length = len(verse)
+first_idx = verse.find('and')
+last_idx = verse.rfind('you')
+count = verse.count('you')
+
+print(message.format(length, first_idx, last_idx, count))
+```
+
+# 24 - There's a Bug in my Code
+Debugging tips:
+  - understand common error messages (and what to do with them)
+  - search for error message using web community
+  - use print statements
+
+Understanding Common Error Messages
+  - `"ZeroDivisionError: division by zero." ` - you can't divide by zero
+  - `"SyntaxError: unexpected EOF while parsing"` - often produced when you've left out something (like a parenthesis), means it got to the end of file and didn't find what it expected
+  - `"TypeError: len() takes exactly one argument (0 given)"` - the number of arguments that are expected were not present when the method was called
+
+Search for Your Error Message
+  - copy and paste error message into web browser
+  - search using keywords from error or situation you're facing
+
+Use Print Statements to Help Debugging
+  - add temporary print statements to help you see which lines were executed before the error occurs
+
+# 25 - Conclusion
+
+We've got building blocks....we're gonna learn how to piece them together.
+
+# 26 - Summary
+Read the stuff I wrote above, fool!
+
+What's Next
+  - Data Structures!
+
+Additional Practice Resources
+  - hackerrank
+  - codewars
