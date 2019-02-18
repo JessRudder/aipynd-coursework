@@ -145,36 +145,136 @@ print(unique_nums)
 No new information
 
 # 13 - Dictionaries and Identity Operators
+Dictionary
+  - mutable data type that stores mappings of unique keys to values
+  - like a hash in Ruby (I'm sure there are reasons this is wrong, but, it's oh so right)
+  - `elements = {"hydrogen": 1, "helium": 2, "carbon": 6}`
+  * keys can be any immutable type (string, integers, tuples, etc)
+  - look up/insert values using square brackets that enclose the key
+    - e.g. `elements["helium"]` and `elements["lithium"] = 3`
+  - `in` checks values in dictionary 
+    - e.g. "carbon" in elements
+  - `get` looks up values in dictionary
+    - e.g. elements.get("dilithium")
+    * if key is not found, returns `None` (this is different from the square brackets which will fail if the key doesn't exist)
+    - can have a default value instead of `None` if the key does not exist `elements.get('kryptonite', 'There\'s no such element!')`
+Identity Operators
+  - `is` evaluates if both sides have the same identity
+  - `is not` evaluates if both sides have different identities
+  ```
+  n = elements.get("dilithium")
+  n is None => True
+  n is not None => False
+  ```
 
 
 # 14 - Quiz: Dictionaries and Identity Operators
+```
+population = {
+    "Shanghai": 17.8,
+    "Istanbul": 13.3,
+    "Karachi": 13.0,
+    "Mumbai": 12.5
+}
+```
 
+`str`, `int` and `float` can also be keys to dictionaries
 
-# 15 - Solution: Dictionaries and Identity Operators
+If you use bracket lookup notation and the key is not in the dictionary, a `KeyError` occurs
+
+`==` checks for equality
+`is` checks for identity
+
+```
+a = [1, 2, 3]
+b = a
+c = [1, 2, 3]
+```
+
+`a == b` and `a is b`
+`a == c` but `a is not b`
+
+# 15 - Solution: Dictionaries and Identity 
+You can put dictionary all on one line or each of the elements on it's own line. It's a stylistic choice.
 
 
 # 16 - Quiz: More With Dictionaries
-
+Tested understanding of indexing on dictionaries
 
 # 17 - When to Use Dictionaries?
+Collecting, storing and working with more information than simple strings or integers
 
+Works well when there'sa linkage between the data being stored that can be broken down to key/value pairs
 
 # 18 - Check for Understanding: Data Structures
+`tuple` is an immutable, ordered data structure that can be indexed and sliced like a list
+
+`sets` and `dictionaries` are both defined with `{}`
+  - `sets` are a sequence of elements separated by commas
+  - `dictionary` is sequence of key/value pairs, marked w/colons and separated by commas
+  - `a = {}` will default to empty dict
+  - `set()` and `dict()` will make empty sets and dicts
 
 
 # 19 - Compound Data Structures
+Contain containers in other containers to create compound data structures
 
+```
+elements = {"hydrogen": {"number": 1,
+                         "weight": 1.00794,
+                         "symbol": "H"},
+              "helium": {"number": 2,
+                         "weight": 4.002602,
+                         "symbol": "He"}}
+```
+
+```
+helium = elements["helium"]  # get the helium dictionary
+hydrogen_weight = elements["hydrogen"]["weight"]  # get hydrogen's weight
+```
 
 # 20 - Quiz: Compound Data Structures
+```
+elements = {'hydrogen': {'number': 1, 'weight': 1.00794, 'symbol': 'H'},
+            'helium': {'number': 2, 'weight': 4.002602, 'symbol': 'He'}}
 
+# todo: Add an 'is_noble_gas' entry to the hydrogen and helium dictionaries
+# hint: helium is a noble gas, hydrogen isn't
+
+elements['helium']['is_noble_gas'] = True
+elements['hydrogen']['is_noble_gas'] = False
+```
 
 # 21 - Solution: Compound Data Structures
-
+No new information
 
 # 22 - Practice Questions
+```
+verse_dict =  {'if': 3, 'you': 6, 'can': 3, 'keep': 1, 'your': 1, 'head': 1, 'when': 2, 'all': 2, 'about': 2, 'are': 1, 'losing': 1, 'theirs': 1, 'and': 3, 'blaming': 1, 'it': 1, 'on': 1, 'trust': 1, 'yourself': 1, 'men': 1, 'doubt': 1, 'but': 1, 'make': 1, 'allowance': 1, 'for': 1, 'their': 1, 'doubting': 1, 'too': 3, 'wait': 1, 'not': 1, 'be': 1, 'tired': 1, 'by': 1, 'waiting': 1, 'or': 2, 'being': 2, 'lied': 1, 'don\'t': 3, 'deal': 1, 'in': 1, 'lies': 1, 'hated': 1, 'give': 1, 'way': 1, 'to': 1, 'hating': 1, 'yet': 1, 'look': 1, 'good': 1, 'nor': 1, 'talk': 1, 'wise': 1}
+print(verse_dict, '\n')
 
+# find number of unique keys in the dictionary
+num_keys = len(verse_dict.keys())
+print(num_keys)
+
+# find whether 'breathe' is a key in the dictionary
+contains_breathe = verse_dict.get('breathe')
+print(contains_breathe)
+
+# create and sort a list of the dictionary's keys
+sorted_keys = sorted(set(verse_dict.keys()))
+
+# get the first element in the sorted list of keys
+print(sorted_keys[0])
+
+# find the element with the highest value in the list of keys
+print(max(verse_dict, key=verse_dict.get)) 
+```
 
 # 23 - Solution: Practice Questions
-
+`print(sorted_keys[-1]) ` was answer for final one. I read it wrong. I thought it meant the key with the highest value (out of key value pairs). It meant the key that had the highest index in the sorted list.
 
 # 24 - Conclusion
+Good understanding of data structures is important for programming and data analysis
+  - data analysts must understand which data types and data structures are available (and when to use them)
+A dictionary is mutable but it's keys must be immutable
