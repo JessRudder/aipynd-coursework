@@ -3,3 +3,5 @@
 [Python Docs](https://docs.python.org/3/library/stdtypes.html#string-methods)
 [Docstring Conventions](https://www.python.org/dev/peps/pep-0257/)
 [Python Tutorial](https://docs.python.org/3/tutorial/)
+[Gaussian Distributions](https://en.wikipedia.org/wiki/Normal_distribution)
+[Binomial Distributions](https://en.wikipedia.org/wiki/Binomial_distribution)
