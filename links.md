@@ -5,3 +5,7 @@
 [Python Tutorial](https://docs.python.org/3/tutorial/)
 [Gaussian Distributions](https://en.wikipedia.org/wiki/Normal_distribution)
 [Binomial Distributions](https://en.wikipedia.org/wiki/Binomial_distribution)
+[Conda myths and misconceptions](https://jakevdp.github.io/blog/2016/08/25/conda-myths-and-misconceptions/)
+[Conda Documentation](https://docs.conda.io/projects/conda)
+[Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
+[Jupyter Magic Commands](http://ipython.readthedocs.io/en/stable/interactive/magics.html)
