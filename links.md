@@ -9,3 +9,4 @@
 [Conda Documentation](https://docs.conda.io/projects/conda)
 [Conda Cheat Sheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html)
 [Jupyter Magic Commands](http://ipython.readthedocs.io/en/stable/interactive/magics.html)
+[NumPy Docs](https://docs.scipy.org/doc/numpy-1.13.0/contents.html)
