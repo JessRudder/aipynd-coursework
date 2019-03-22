@@ -347,16 +347,85 @@ np.sort(X, axis = 1))
 ```
 
 # 10 - Quiz: Manipulating ndarrays
+```
+import numpy as np
 
+# Create a 5 x 5 ndarray with consecutive integers from 1 to 25 (inclusive).
+# Afterwards use Boolean indexing to pick out only the odd numbers in the array
+
+# Create a 5 x 5 ndarray with consecutive integers from 1 to 25 (inclusive).
+X = np.arange(1,26).reshape(5,5)
+
+# Use Boolean indexing to pick out only the odd numbers in the array
+Y = X[X % 2 != 0]
+
+```
 
 # 11 - Arithmetic Operations and Broadcasting
+NumPy allows the following on ndarrays:
+  - element-wise operations 
+  - matrix operations
+Broadcasting
+  - how NumPy handles element-wise arithmetic operations with ndarrays of different shapes
+  - used implicitly when doing arithmetic operations between scalars and ndarrays
+Addition
+  - `np.add()` or `+`
+  * NOTE: function allows you to tweak operations with keywords
+Subtraction
+  - `np.subtract()` or `-`
+  * NOTE: function allows you to tweak operations with keywords
+Multiplication
+  - `np.multiply()` or `*`
+  * NOTE: function allows you to tweak operations with keywords
+Division
+  - `np.divide()` or `/`
+  * NOTE: function allows you to tweak operations with keywords
+Exponentiation
+  - `np.exp()`
+  - `np.sqrt()`
+  - `np.power(x,2)`
+Statistics (can pass in axis=0 or 1)
+  - `X.mean()` - average
+  - `X.sum()` - sum
+  - `X.std()` - standard deviation
+  - `X.median()` - median
+  - `X.max()` - max value
+  - `X.min()` - min value
+Math on all of the elements in the array:
+  - `3 * X`
+  - `3 + X`
+  - `3 - X`
+  - `3 / X`
+All of the above work the same on rank 2 matrices
 
 
 # 12 - Quiz: Creating ndarrays with Broadcasting
+```
+import numpy as np
 
+# Use Broadcasting to create a 4 x 4 ndarray that has its first
+# column full of 1s, its second column full of 2s, its third
+# column full of 3s, etc.. 
+ones_array = np.ones((4,4))
+nums = [1,2,3,4]
+
+X = ones_array * nums
+```
 
 # 13 - Getting Set Up for the Mini-Project
-
+All set to work through it with the embedded notebooks.
 
 # 14 - Mini-Project: Mean Normalization and Data Separation
-
+normalizing / feature scaling
+  - ensure all data is at the same scale
+mean normalization
+  - distribute values evenly in some small range around 0
+After the data has been mean normalized, it is customary in machine learnig to split our dataset into three sets:
+  - Training Set: 60% of data
+  - Cross Validation Set: 20% of data
+  - Test Set: 20% of data
+`np.random.permutation(N)` 
+  - creates a random permutation of integers from 0 to N - 1
+  - this is handy if you know that you have N rows and you want to do a random sampling
+    - use `.permutation` to get the indices of the rows
+    - my_array[perm_results]
