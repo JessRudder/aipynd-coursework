@@ -327,4 +327,4 @@ This will group by department by year then show the sum of salaries for that dep
 Gonna run it in the hosted JuPyTer notebooks
 
 # 14 - Mini-Project: Statistics From Stock Data
-
+Interesting seeing it in action. They mostly held my hand here. I'm kind of glad for that, but, worried when I have to be off on my own.
