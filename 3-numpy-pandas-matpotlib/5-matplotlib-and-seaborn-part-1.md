@@ -174,28 +174,144 @@ plt.axis('square')
   - make it less than one and remove color from the center of the circle
 
 # 9 - Histograms
+Plot distribution of numeric value
+Quantitative version of bar chart
+Values are grouped into contious bins
 
+```
+plt.hist(data = df, x = 'num_var')
+```
+
+By default, `hist` divides data into 10 bins
+  - you will almost always want to adjust this
+  ```
+  bin_edges = np.arange(0, df['num_var'].max()+1, 1)
+  plt.hist(data = df, x = 'num_var', bins = bin_edges)
+  ```
+  - `arange` arguments:
+    - leftmost bin edge
+    - upper limit
+    - bin width
+  * Play around with different bin sizes to see what works best
+
+Can also use seaborn's `distplot`
+  - `sb.distplot(df['num_var'])`
+  - first argument must be series or array with points to be plotted
+  - better bin defaults but still want to mess with them
+  ```
+  bin_edges = np.arange(0, df['num_var'].max()+1, 1)
+  sb.distplot(df['num_var'], bins = bin_edges, kde = False,
+              hist_kws = {'alpha' : 1})
+  ```
 
 # 10 - Histogram Practice
-
+Made a histogram. It was fun. But that is a lie.
 
 # 11 - Figures, Axes, and Subplots
+Base of visulaization in matplotlib is a `Figure` object
+  - will have one or more `Axes` objects
 
+```
+fig = plt.figure()
+ax = fig.add_axes([.125, .125, .775, .755])
+ax.hist(data = df, x = 'num_var')
+```
+  - `figure()` creates new Figure object
+  - `.add_axes()` creates Axes object in the figure (provide dimensions, width, height)
+  - `.hist()` says which type of graph to plot on there
+
+In seaborn, seaborn functions have an `ax` parm to specify which Axes a plot will be drawn on
+
+```
+fig = plt.figure()
+ax = fig.add_axes([.125, .125, .775, .755])
+base_color = sb.color_palette()[0]
+sb.countplot(data = df, x = 'cat_var', color = base_color, ax = ax)
+```
+
+To get two or more graphs side by side, you can use subplots!
+
+```
+plt.figure(figsize = [10, 5]) # larger figure size for subplots
+
+# example of somewhat too-large bin size
+plt.subplot(1, 2, 1) # 1 row, 2 cols, subplot 1
+plt.hist(pokemon['special-defense'])
+
+# example of somewhat too-small bin size
+plt.subplot(1, 2, 2) # 1 row, 2 cols, subplot 1
+plt.hist(pokemon['special-defense'], bins = 80)
+```
 
 # 12 - Choosing a Plot for Discrete Data
-
+You can use `rwidth` to separate bars on a histogram
 
 # 13 - Descriptive Statistics, Outliers and Axis Limits
+Pay attention to limits, scale, etc to find underlying patterns in data
 
+Change histograms axis limits you can add `xlim` to your code
+  - takes two numbers specifying upper and lower bounds of x-axis)
+  - allows you to zoom in on more interesting data without focusing on outliers
 
 # 14 - Scales and Tranformations
+Sometimes different scales (e.g. log-normals) are better for showcasing the data
 
+```
+plt.figure(figsize = [10, 5])
+
+# left histogram: data plotted in natural units
+plt.subplot(1, 2, 1)
+bin_edges = np.arange(0, data.max()+100, 100)
+plt.hist(data, bins = bin_edges)
+plt.xlabel('values')
+
+# right histogram: data plotted after direct log transformation
+plt.subplot(1, 2, 2)
+log_data = np.log10(data) # direct data transform
+log_bin_edges = np.arange(0.8, log_data.max()+0.1, 0.1)
+plt.hist(log_data, bins = log_bin_edges)
+plt.xlabel('log(values)')
+```
+
+Can also do a scale transformation
+```
+bin_edges = 10 ** np.arange(0.8, np.log10(data.max())+0.1, 0.1)
+plt.hist(data, bins = bin_edges)
+plt.xscale('log')
+tick_locs = [10, 30, 100, 300, 1000, 3000]
+plt.xticks(tick_locs, tick_locs)
+```
+  - make sure to specify `xticks` after `xscale`
 
 # 15 - Scales and Transformations Practice
-
+Practiced zooming, scaling and transforming charts.
 
 # 16 - Lesson Summary
-
+Good summary of what we've learned.
+  - my brain is fried
+  - use the right bar chart or histogram for the job
+  - don't use pie charts because no one can read them
+  - lots of info about how to plot things....you can read the documentation as you need it
 
 # 17 - Extra: Kernel Density Estimation
+  - details about how the kernel density estimation line works in Seaborn
+  - if you need to learn how to interpret it, look [here](https://classroom.udacity.com/nanodegrees/nd089/parts/8de94dee-7635-43b3-9d11-5e4583f22ce3/modules/dd3e4af8-d576-427e-baae-925fd16ff2ff/lessons/43855abb-dae5-46c7-9167-4b001dabd41e/concepts/cfbaee5f-1a27-4457-8a67-8421bf19cb05)
 
+```
+data = [0.0, 3.0, 4.5, 8.0]
+plt.figure(figsize = [12, 5])
+
+# left plot: showing kde lumps with the default settings
+plt.subplot(1, 3, 1)
+sb.distplot(data, hist = False, rug = True, rug_kws = {'color' : 'r'})
+
+# central plot: kde with narrow bandwidth to show individual probability lumps
+plt.subplot(1, 3, 2)
+sb.distplot(data, hist = False, rug = True, rug_kws = {'color' : 'r'},
+            kde_kws = {'bw' : 1})
+
+# right plot: choosing a different, triangular kernel function (lump shape)
+plt.subplot(1, 3, 3)
+sb.distplot(data, hist = False, rug = True, rug_kws = {'color' : 'r'},
+            kde_kws = {'bw' : 1.5, 'kernel' : 'tri'})
+```
