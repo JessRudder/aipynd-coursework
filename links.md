@@ -11,3 +11,5 @@
 [Jupyter Magic Commands](http://ipython.readthedocs.io/en/stable/interactive/magics.html)
 [NumPy Docs](https://docs.scipy.org/doc/numpy-1.13.0/contents.html)
 [Pandas Docs](https://pandas.pydata.org/pandas-docs/stable/)
+[LaTeX cheatsheet](https://www.authorea.com/users/77723/articles/110898-how-to-write-mathematical-equations-expressions-and-symbols-with-latex-a-cheatsheet)
+[LaTeX Cookbook](http://www.personal.ceu.hu/tex/cookbook.html#inline)
