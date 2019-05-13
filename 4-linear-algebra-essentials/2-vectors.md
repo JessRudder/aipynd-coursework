@@ -61,20 +61,70 @@ Magnitude of 3 dimensional vector:
 `\sqrt{a^2+b^2+c^2}`
 
 # 8 - Operations in the Field
+Zero element: |0|
+              |0|
+              |0|
+              |0|
 
+One element:  |1|
+              |1|
+              |1|
+              |1|            
+
+
+We're going to focus on vector addition and scalar by vector multiplication
 
 # 9 - Vector Addition
 
+x = |a1|
+    |a2|
+    |a3|
+    |a4|
+
+y = |b1|
+    |b2|
+    |b3|
+    |b4|
+
+x+y = |a1 + b1|
+      |a2 + b2|
+      |a3 + b3|
+      |a4 + b4|
 
 # 10 - Vectors: Quiz 2
+x = |5|
+    |1|
 
+y = |-4|
+    |-1|
+
+Magnitude is sqrt(1^2 + 0^2) = 1
+
+Angle = 0 (it's on the X axis)
 
 # 11 - Scalar by Vector Multiplication
 
+For scalar, multiply each element in the vector by the scalar:
+
+x = |a1|
+    |a2|
+    |a3|
+    |a4|
+
+y = zx = |za1|
+         |za2|
+         |za3|
+         |za4|
+
 
 # 12 - Vectors: Quiz 3
+Magnitude of a vector with a scalar is 
 
+`\alpha\sqrt{a^2 + b^2}`
+(scalar * magnitude)
+
+By knowing how to add vectors and how to multiply them by a scalar, we can define a very important term in Linear Algebra: Linear Combination.
 
 # 13 - Vectors Quiz Answers
 
-
+These were just the answers to the quizzes we already worked through.
