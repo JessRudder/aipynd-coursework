@@ -72,3 +72,4 @@ plt.show()
 
 
 # 2 - Linear Combination Lab Solution
+Videos showing how to solve.
