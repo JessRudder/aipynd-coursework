@@ -102,21 +102,63 @@ slope = dy/dx = d(ln(x))/dx = 1/x
 This is a sneak peek at multivariable calculus!
 
 # 9 - Limits
+Assigning fancy notation to intuitive idea that one number gets closer to another.
 
+Epsilon, Delta definition of limits
+  - not really important for now, but is fun to know for later when we're all into the calculus
 
+Talked about L'hopital's rule
+  - I definitely did not understand this
 
 # 10 - Integrals
+They are an inverse of derivatives
 
+S8/0 v(t)dt
+  - S8/0 is the funky large s with 8 at top and 0 at bottom
+v(t) = t(8-t)
+described the area under the graph
+== Integral (because it integrates the area under the graph)
 
+Derivative of any funtion giving the area under a graph is equal to the function for the graph itself
+Derivative: 8t-t^2
+Antiderivative: 4t^2-1/3*t^3 + C
+  - infinite number of Cs that would move graph up and down but not change the shape
+  - subtractthe off the value of that antiderivative function ta the lower bound
+    - in this case, plug in zero which = zero so subtract a constant of 0
+    - won't always be 0 though!
+
+Any time you want to integrate some function 
+  - first step to evaluating that integral is to find an antiderivative (some other function whose derivative is the thing inside the integral)
+  - integral = antiderivative evaluated at the top bound minus its value at the bottom bound
+  * This is the Fundamental theorem of calculus
 
 # 11 - More on Integrals
-
-
+Let's learn how to find the average of a continuous variable
+  - e.g. the average height of the graph in a given interval
+  - vague sense that we want to add up an infinite set of numbers and divide by infinity
+  - that sense almost always means we should use an integral
 
 # 12 - The Taylor Series (optional)
-
-
+Taylor Series
+  - representation of a function as an infinite sum of terms
+  - a way to proximate a function
+  * Not needed to build/train our own neural network
 
 # 13 - Multivariable Chain Rule
+What happens when there's more than one variable in our function?
+  - In neural networks this will almost always be the case
+Comes up any time you have one variable influencing another variable along multiple different paths
+  - x determines values of f and g which then combine to determine value of h
+      f = x^2
+    /   \
+  x       h f^2g
+    \   /
+      g = cos(pi*x)
+  - assume we need to understand how a small change to x will affect h
 
-
+To solve:
+  - calculate all of the derivatives associated with the edges
+  - dh/dx = df/d * Gh/Gf + dg/dx * Gh/Gg
+    * NOTE: G means partial derivative because the actual derivative requires more than one input
+  - (2x)(2fg)*(-sin(pi*x)*pi)(f^2)
+  - 32 (meaning tiny nudge to x results in a 32 times larger change to h)
