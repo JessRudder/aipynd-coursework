@@ -13,3 +13,7 @@
 [Pandas Docs](https://pandas.pydata.org/pandas-docs/stable/)
 [LaTeX cheatsheet](https://www.authorea.com/users/77723/articles/110898-how-to-write-mathematical-equations-expressions-and-symbols-with-latex-a-cheatsheet)
 [LaTeX Cookbook](http://www.personal.ceu.hu/tex/cookbook.html#inline)
+[Walkthrough of Calculating Gradient Descent](https://classroom.udacity.com/nanodegrees/nd089/parts/52fefcaa-2550-4581-87cd-2347fa527447/modules/8d44653f-dfda-4720-88ba-cfa77a93c009/lessons/93d158ce-25e1-4fc1-a187-162982e3cef7/concepts/0d92455b-2fa0-4eb8-ae5d-07c7834b8a56)
+[Khan Academy lectures on Gradient Descent](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient)
+[Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b#.vt3ax2kg9)
+[a lecture from Stanford's CS231n course](https://www.youtube.com/watch?v=59Hbtz7XgjM)
