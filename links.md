@@ -17,3 +17,4 @@
 [Khan Academy lectures on Gradient Descent](https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/gradient-and-directional-derivatives/v/gradient)
 [Yes, you should understand backprop](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b#.vt3ax2kg9)
 [a lecture from Stanford's CS231n course](https://www.youtube.com/watch?v=59Hbtz7XgjM)
+[GitHub Repo with Deep Learning Notebooks](https://github.com/udacity/deep-learning-v2-pytorch)
